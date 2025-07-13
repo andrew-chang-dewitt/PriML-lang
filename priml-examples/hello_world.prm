@@ -1,0 +1,13 @@
+extern val ^ : string * string -> string
+(* extern module Time requires compiling w/ time.ml, time.cmi, & time.cmo in same directory as this file *)
+(* using Time.print instead of Printf.printf because of simpler fn signature & no need for format strings *)
+extern val Time.print : string -> unit
+
+fun hello name = 
+    "hello, " ^ name ^ "!"
+
+main {
+    (* FIXME: this doesn't parse? *)
+    _ <- Time.print (hello "bob")
+    ret 0
+}

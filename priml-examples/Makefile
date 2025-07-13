@@ -2,6 +2,9 @@ PRIML=../primlc
 
 all: bank email fibserv fibserv-fair fib_term web
 
+hello_world: hello_world.prm
+	$(PRIML) hello_world.prm hello_world time.ml
+
 funct_ex_dfc: funct_ex_dfc.prm
 	$(PRIML) funct_ex_dfc.prm funct_ex_dfc
 
@@ -77,4 +80,4 @@ cv_inversion_err: cv-inversion-err.prm
 	$(PRIML) cv-inversion-err.prm cv_inversion_err
 
 clean:
-	rm -f bank email fibserv fibserv-fair fib_term web cv_inversion_err cv_prod_cons_err cv_prod_cons
+	rm -f bank email fibserv fibserv-fair fib_term web cv_inversion_err cv_prod_cons_err cv_prod_cons hello_world
